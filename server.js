@@ -41,18 +41,18 @@ app.use(express.json());
 app.get("/", (req, res) => {
 
 res.send(`
-   <html>
-     <head>
+  <html>
+    <head>
       <title>>Welcome to the Happy Thoughts API</title>
     </head>
     <body>
-  <p>Available endpoints:</p>
-  <ul>
-    <li>GET /thoughts - Get the latest thoughts</li>
-    <li>POST /thoughts - Post a new thought</li>
-    <li>POST /thoughts/:thoughtId/like - Like a thought</li>
-  </ul>
-   </body>
+      <p>Available endpoints:</p>
+      <ul>
+        <li>GET /thoughts - Get the latest thoughts</li>
+        <li>POST /thoughts - Post a new thought</li>
+        <li>POST /thoughts/:thoughtId/like - Like a thought</li>
+      </ul>
+    </body>
   </html>
 `);
 });
