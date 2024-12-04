@@ -1,7 +1,7 @@
 {
   "name": "project-happy-thoughts-api",
   "version": "1.0.0",
-    "type": "module",
+  "type": "module",
   "description": "Starter project to get up and running with express quickly",
   "scripts": {
     "start": "babel-node server.js",
@@ -15,6 +15,7 @@
     "@babel/preset-env": "^7.16.11",
     "cors": "^2.8.5",
     "express": "^4.17.3",
+    "mongodb": "^6.11.0",
     "mongoose": "^8.0.0",
     "nodemon": "^3.0.1"
   }

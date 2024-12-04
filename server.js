@@ -30,7 +30,16 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello Technigo!");
+
+res.send(`
+  <h1>Welcome to the Happy Thoughts API</h1>
+  <p>Available endpoints:</p>
+  <ul>
+    <li>GET /thoughts - Get the latest thoughts</li>
+    <li>POST /thoughts - Post a new thought</li>
+    <li>POST /thoughts/:thoughtId/like - Like a thought</li>
+  </ul>
+`);
 });
 
 app.get("/thoughts", async (req, res) => {
