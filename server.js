@@ -23,6 +23,15 @@ const Thought = mongoose.model('Thought', {
   }
 });
 
+mongoose.connection.on("error", (err) => {
+  console.error("MongoDB connection error:", err);
+});
+
+mongoose.connection.once("open", () => {
+  console.log("Successfully connected to MongoDB");
+});
+
+
 const port = process.env.PORT || 8080;
 const app = express();
 
@@ -32,13 +41,19 @@ app.use(express.json());
 app.get("/", (req, res) => {
 
 res.send(`
-  <h1>Welcome to the Happy Thoughts API</h1>
+   <html>
+     <head>
+      <title>>Welcome to the Happy Thoughts API</title>
+    </head>
+    <body>
   <p>Available endpoints:</p>
   <ul>
     <li>GET /thoughts - Get the latest thoughts</li>
     <li>POST /thoughts - Post a new thought</li>
     <li>POST /thoughts/:thoughtId/like - Like a thought</li>
   </ul>
+   </body>
+  </html>
 `);
 });
 
